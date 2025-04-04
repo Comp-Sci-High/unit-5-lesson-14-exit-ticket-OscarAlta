@@ -1,4 +1,5 @@
 const express = require("express");
+const req = require("express/lib/request");
 const mongoose = require("mongoose");
 const app = express();
 
@@ -34,4 +35,11 @@ const Potion = mongoose.model("Potion", potionSchema, "Potions")
 // e.g. /update/polyjuice will update the color of the polyjuice potion to pearly white
 // e.g. /update/amortentia will update the color of the Amortentia potion to golden purple
 
+const colorUpdates = {
+polyjuice: "pearly white",
+amortentia: "golden purple"
+}
 
+app.patch("/update/:label", async(req, res) =>{
+const la
+})
